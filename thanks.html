@@ -1,0 +1,113 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request Received — SwiftTurn Property Services</title>
+  <meta name="robots" content="noindex" />
+  <meta name="description" content="SwiftTurn Property Services received your request. We will respond as soon as possible." />
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#111a2d;
+      --muted:#9fb0d0;
+      --text:#e8eefc;
+      --border:rgba(255,255,255,.10);
+      --shadow:0 18px 50px rgba(0,0,0,.35);
+      --radius:18px;
+      --max:900px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 700px at 10% 10%, rgba(127,182,255,.20), transparent 55%),
+                  radial-gradient(900px 600px at 90% 20%, rgba(139,255,204,.15), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.55;
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      padding:24px;
+    }
+    .wrap{
+      width:100%;
+      max-width:var(--max);
+    }
+    .card{
+      background:rgba(17,26,45,.70);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+      padding:24px;
+      backdrop-filter: blur(8px);
+    }
+    h1{
+      margin:0 0 10px 0;
+      font-size:34px;
+      letter-spacing:-.4px;
+    }
+    p{
+      margin:10px 0;
+      color:var(--muted);
+      font-size:16px;
+    }
+    .ctaRow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:16px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+      font-weight:650;
+      text-decoration:none;
+      transition: transform .12s ease, background .12s ease, filter .12s ease;
+    }
+    .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.10)}
+    .btnPrimary{
+      background: linear-gradient(135deg, rgba(127,182,255,.90), rgba(139,255,204,.70));
+      color:#061024;
+      border:none;
+    }
+    .btnPrimary:hover{filter:brightness(1.05)}
+    .finePrint{
+      font-size:12px;
+      color:var(--muted);
+      margin-top:14px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Request received.</h1>
+
+      <p>Thanks — we received your quote request. We’ll respond as soon as possible.</p>
+
+      <p>For fastest service, call or text <strong style="color:var(--text)">(817) 999-4960</strong>.</p>
+
+      <div class="ctaRow">
+        <a class="btn btnPrimary" href="tel:+18179994960">Call (817) 999-4960</a>
+        <a class="btn" href="sms:+18179994960?&body=Hi%20SwiftTurn%2C%20following%20up%20on%20my%20quote%20request.%20My%20address%20is%3A%20____%20Preferred%20date%3A%20____">Text Follow-Up</a>
+        <a class="btn" href="/">Back to home</a>
+      </div>
+
+      <p class="finePrint">
+        SwiftTurn Property Services • A DJEM Holdings, LLC Company
+      </p>
+    </div>
+  </div>
+</body>
+</html>

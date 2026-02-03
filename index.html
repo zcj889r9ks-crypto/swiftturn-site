@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SwiftTurn Property Services provides fast, reliable rental turnover services for vacant units. Flat-rate pricing. Fort Worth and surrounding areas." />
+  <title>SwiftTurn Property Services | Rental Turnovers Made Simple</title>
+
+  <!-- Canonical URL (safe even before DNS is connected) -->
+  <link rel="canonical" href="https://www.swiftturnpropertyservices.com/" />
+
+  <!-- Open Graph (social sharing preview) -->
+  <meta property="og:title" content="SwiftTurn Property Services | Rental Turnovers Made Simple" />
+  <meta property="og:description" content="Fast, reliable rental turnover services for vacant units. Flat-rate pricing. Fort Worth and surrounding areas." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.swiftturnpropertyservices.com/" />
+
+  <!-- Optional favicons (uncomment after you have files)
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  -->
+
+  <!-- Local Business Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "SwiftTurn Property Services",
+    "url": "https://www.swiftturnpropertyservices.com/",
+    "telephone": "+18179994960",
+    "description": "Fast, reliable rental turnover services for vacant units. Flat-rate pricing with photo-confirmed completion.",
+    "areaServed": ["Fort Worth, TX","Arlington, TX","Keller, TX","Burleson, TX","Mansfield, TX"]
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#111a2d;
+      --muted:#9fb0d0;
+      --text:#e8eefc;
+      --accent:#7fb6ff;
+      --accent2:#8bffcc;
+      --danger:#ff7f7f;
+      --border:rgba(255,255,255,.10);
+      --shadow:0 18px 50px rgba(0,0,0,.35);
+      --radius:18px;
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 700px at 10% 10%, rgba(127,182,255,.20), transparent 55%),
+                  radial-gradient(900px 600px at 90% 20%, rgba(139,255,204,.15), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+    header{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:10px 0 24px 0;
+    }
+    .brand{display:flex; align-items:center; gap:12px;}
+    .logoMark{
+      width:44px; height:44px; border-radius:14px;
+      background: linear-gradient(135deg, rgba(127,182,255,.85), rgba(139,255,204,.65));
+      box-shadow: var(--shadow);
+      display:grid; place-items:center;
+      font-weight:800; color:#061024;
+    }
+    .brand h1{font-size:18px; margin:0; letter-spacing:.2px}
+    .brand p{margin:0; color:var(--muted); font-size:12px}
+
+    nav{
+      display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end;
+      color:var(--muted); font-size:14px;
+    }
+    nav a{padding:8px 10px; border-radius:12px}
+    nav a:hover{background:rgba(255,255,255,.06); color:var(--text)}
+
+    .hero{
+      display:grid; grid-template-columns: 1.15fr .85fr; gap:20px;
+      align-items:stretch; margin-top:6px;
+    }
+    .card{
+      background:rgba(17,26,45,.70);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+      padding:22px;
+      backdrop-filter: blur(8px);
+    }
+    .headline{
+      font-size:44px; line-height:1.08; margin:0 0 12px 0;
+      letter-spacing:-.6px;
+    }
+    .subhead{color:var(--muted); font-size:16px; margin:0 0 18px 0}
+    .pillRow{display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 18px}
+    .pill{
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      border-radius:999px;
+      padding:8px 12px;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .ctaRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+      font-weight:650;
+      cursor:pointer;
+      transition: transform .12s ease, background .12s ease, filter .12s ease;
+    }
+    .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.10)}
+    .btnPrimary{
+      background: linear-gradient(135deg, rgba(127,182,255,.90), rgba(139,255,204,.70));
+      color:#061024;
+      border:none;
+    }
+    .btnPrimary:hover{filter:brightness(1.05)}
+
+    .finePrint{color:var(--muted); font-size:12px; margin-top:12px}
+
+    .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; margin-top:18px;}
+    .grid2{display:grid; grid-template-columns: repeat(2, 1fr); gap:16px; margin-top:18px;}
+
+    h2{margin:0 0 10px; font-size:22px}
+    h3{margin:0 0 8px; font-size:16px}
+    .muted{color:var(--muted)}
+    .list{margin:0; padding-left:18px; color:var(--muted)}
+    .list li{margin:6px 0}
+    .hr{height:1px; background:var(--border); margin:26px 0;}
+
+    .badge{
+      display:inline-block;
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      color:var(--muted);
+      background:rgba(255,255,255,.04);
+    }
+
+    .pricingTable{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      overflow:hidden;
+      border:1px solid var(--border);
+      border-radius:16px;
+      background:rgba(255,255,255,.03);
+    }
+    .pricingTable th, .pricingTable td{
+      padding:12px 12px;
+      border-bottom:1px solid var(--border);
+      font-size:14px;
+    }
+    .pricingTable th{
+      text-align:left;
+      color:var(--text);
+      background:rgba(255,255,255,.04);
+      font-weight:700;
+    }
+    .pricingTable td{color:var(--muted)}
+    .pricingTable tr:last-child td{border-bottom:none}
+
+    .faq details{
+      border:1px solid var(--border);
+      border-radius:16px;
+      background:rgba(255,255,255,.03);
+      padding:12px 14px;
+      margin:10px 0;
+    }
+    .faq summary{cursor:pointer; font-weight:700; color:var(--text);}
+    .faq p{margin:10px 0 0; color:var(--muted)}
+
+    /* Form */
+    form{display:grid; gap:10px;}
+    label{font-size:12px; color:var(--muted); display:block; margin-bottom:6px;}
+    input, textarea, select{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:rgba(5,10,20,.35);
+      color:var(--text);
+      outline:none;
+    }
+    input::placeholder, textarea::placeholder{color:rgba(159,176,208,.7)}
+    textarea{min-height:110px; resize:vertical}
+    .formRow{display:grid; grid-template-columns: 1fr 1fr; gap:10px;}
+    .dangerText{color:var(--danger)}
+
+    footer{
+      color:var(--muted);
+      font-size:12px;
+      padding:24px 0 10px;
+      text-align:center;
+    }
+
+    @media (max-width: 920px){
+      .hero{grid-template-columns:1fr}
+      .headline{font-size:38px}
+      .grid3{grid-template-columns:1fr}
+      .grid2{grid-template-columns:1fr}
+      .formRow{grid-template-columns:1fr}
+      nav{justify-content:flex-start}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logoMark" aria-label="SwiftTurn Logo">ST</div>
+        <div>
+          <h1>SwiftTurn Property Services</h1>
+          <p>Rental Turnovers • Unit Readiness • Fast Scheduling</p>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#areas">Service Areas</a>
+        <a href="#quote">Request a Quote</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="card">
+        <span class="badge">Vacant units only • Flat-rate pricing • Photo-confirmed completion</span>
+        <h2 class="headline">Rental turnovers made simple.</h2>
+        <p class="subhead">
+          SwiftTurn coordinates fast, reliable move-out and turnover services so vacant units can be listed,
+          shown, and re-rented without delays.
+        </p>
+
+        <div class="pillRow">
+          <span class="pill">✔ Fort Worth-first operations</span>
+          <span class="pill">✔ Zone-based contractor dispatch</span>
+          <span class="pill">✔ Payment before service</span>
+          <span class="pill">✔ Before/after photo verification</span>
+        </div>
+
+        <div class="ctaRow">
+          <a class="btn btnPrimary" href="tel:+18179994960">Call (817) 999-4960</a>
+          <a class="btn" href="sms:+18179994960?&body=Hi%20SwiftTurn%2C%20I%20need%20a%20vacant%20unit%20turnover%20clean.%20City%3A%20____%20Beds%2FBaths%3A%20____%20Date%3A%20____">Text to Quote</a>
+          <a class="btn" href="#quote">Request Online</a>
+        </div>
+
+        <p class="finePrint">
+          Professional coordination for landlords, property managers, investors, and real estate professionals.
+          If your unit is occupied, contact us once it’s vacant.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>What you get</h2>
+        <div class="grid2" style="margin-top:10px;">
+          <div>
+            <h3>Fast Scheduling</h3>
+            <p class="muted">Same/next-day availability when possible. We confirm and dispatch quickly.</p>
+          </div>
+          <div>
+            <h3>Clear Pricing</h3>
+            <p class="muted">Flat rates and add-ons upfront. No surprises.</p>
+          </div>
+          <div>
+            <h3>Reliable Completion</h3>
+            <p class="muted">Before/after photos verify completion and protect all parties.</p>
+          </div>
+          <div>
+            <h3>One Point of Contact</h3>
+            <p class="muted">You message SwiftTurn. We handle coordination and confirmation.</p>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <h3>Best fit for</h3>
+        <ul class="list">
+          <li>Move-outs (vacant apartments/homes)</li>
+          <li>Rental turnovers between tenants</li>
+          <li>Listing preparation for vacant units</li>
+          <li>Portfolio support for property managers</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="hr"></div>
+
+    <section id="services" class="card">
+      <h2>Services</h2>
+      <p class="muted">
+        SwiftTurn specializes in vacant unit turnover coordination. This allows faster, predictable results.
+      </p>
+
+      <div class="grid3">
+        <div class="card" style="background:rgba(255,255,255,.03); box-shadow:none;">
+          <h3>Turnover / Move-Out Cleaning</h3>
+          <p class="muted">Vacant units cleaned and ready for listing or move-in.</p>
+          <ul class="list">
+            <li>Floors, bathrooms, kitchen surfaces</li>
+            <li>Trash removal</li>
+            <li>Dusting of accessible surfaces</li>
+            <li>Mirrors and visible glass</li>
+          </ul>
+        </div>
+
+        <div class="card" style="background:rgba(255,255,255,.03); box-shadow:none;">
+          <h3>Add-Ons</h3>
+          <p class="muted">Priced separately and confirmed before dispatch.</p>
+          <ul class="list">
+            <li>Oven cleaning</li>
+            <li>Refrigerator cleaning</li>
+            <li>Same-day rush service (when available)</li>
+          </ul>
+        </div>
+
+        <div class="card" style="background:rgba(255,255,255,.03); box-shadow:none;">
+          <h3>Quality Verification</h3>
+          <p class="muted">Every job includes completion confirmation.</p>
+          <ul class="list">
+            <li>Before/after photos</li>
+            <li>Completion message</li>
+            <li>Issue reporting window (24 hours)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="hr"></div>
+
+    <section id="pricing" class="card">
+      <h2>Pricing (Flat Rate)</h2>
+      <p class="muted">Final price depends on unit size and add-ons. Vacant units only.</p>
+
+      <table class="pricingTable" aria-label="Pricing table">
+        <thead>
+          <tr>
+            <th>Unit Type</th>
+            <th>Typical Range</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Studio / 1 Bed</td>
+            <td>$170 – $190</td>
+            <td>Most common move-out clean tier</td>
+          </tr>
+          <tr>
+            <td>2 Bed</td>
+            <td>$210 – $230</td>
+            <td>Flat-rate based on vacant unit scope</td>
+          </tr>
+          <tr>
+            <td>3+ Bed / House</td>
+            <td>$260 – $320</td>
+            <td>Larger or multi-bath homes vary by scope</td>
+          </tr>
+          <tr>
+            <td>Add-ons</td>
+            <td>Oven +$30 • Fridge +$25</td>
+            <td>Priced and confirmed before dispatch</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="finePrint">
+        Heavy-soil / extreme condition units may require an additional surcharge quoted in advance.
+      </p>
+    </section>
+
+    <div class="hr"></div>
+
+    <section id="areas" class="card">
+      <h2>Service Areas</h2>
+      <p class="muted">Fort Worth-first operations with expansion across DFW.</p>
+
+      <div class="grid3">
+        <div class="card" style="background:rgba(255,255,255,.03); box-shadow:none;">
+          <h3>Primary</h3>
+          <ul class="list">
+            <li>Fort Worth</li>
+          </ul>
+        </div>
+
+        <div class="card" style="background:rgba(255,255,255,.03); box-shadow:none;">
+          <h3>Expansion (Planned)</h3>
+          <ul class="list">
+            <li>Arlington</li>
+            <li>Keller</li>
+            <li>Burleson</li>
+            <li>Mansfield</li>
+          </ul>
+        </div>
+
+        <div class="card" style="background:rgba(255,255,255,.03); box-shadow:none;">
+          <h3>Future Metro Growth</h3>
+          <ul class="list">
+            <li>Dallas (after stability thresholds)</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="finePrint">
+        Fort Worth is our primary service area. Expansion cities are scheduled based on availability and zone coverage.
+      </p>
+    </section>
+
+    <div class="hr"></div>
+
+    <section id="quote" class="card">
+      <h2>Request a Quote</h2>
+      <p class="muted">
+        For fastest service, text <strong>(817) 999-4960</strong>.
+        If you prefer, submit the form below and we will respond as soon as possible.
+      </p>
+
+      <!-- NETLIFY FORMS (native submit + redirect to thanks.html) -->
+      <form
+        id="quoteForm"
+        name="quote"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        action="/thanks.html"
+      >
+        <input type="hidden" name="form-name" value="quote" />
+        <input type="hidden" name="subject" value="SwiftTurn Quote Request (Website)" />
+
+        <p style="display:none;">
+          <label>Don’t fill this out: <input name="bot-field" /></label>
+        </p>
+
+        <div class="formRow">
+          <div>
+            <label for="name">Full Name</label>
+            <input id="name" name="name" placeholder="Full Name" required />
+          </div>
+          <div>
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="tel" placeholder="Phone Number" required />
+          </div>
+        </div>
+
+        <div class="formRow">
+          <div>
+            <label for="address">Service Address</label>
+            <input id="address" name="address" placeholder="Service Address" required />
+          </div>
+          <div>
+            <label for="zip">ZIP Code</label>
+            <input id="zip" name="zip" inputmode="numeric" placeholder="ZIP Code" required />
+          </div>
+        </div>
+
+        <div class="formRow">
+          <div>
+            <label for="city">City</label>
+            <select id="city" name="city" required>
+              <option value="" disabled selected>City</option>
+              <option>Fort Worth</option>
+              <option>Arlington</option>
+              <option>Keller</option>
+              <option>Burleson</option>
+              <option>Mansfield</option>
+              <option>Other (DFW)</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="unit_size">Unit Size</label>
+            <select id="unit_size" name="unit_size" required>
+              <option value="" disabled selected>Unit Size</option>
+              <option>Studio / 1 Bed</option>
+              <option>2 Bed</option>
+              <option>3+ Bed / House</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="formRow">
+          <div>
+            <label for="vacant">Is the unit vacant?</label>
+            <select id="vacant" name="vacant" required>
+              <option value="" disabled selected>Is the unit vacant?</option>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="date">Preferred Service Date (optional)</label>
+            <input id="date" name="date" placeholder="Preferred Service Date (e.g., Mar 8)" />
+          </div>
+        </div>
+
+        <p id="vacantNote" class="finePrint dangerText" style="display:none;">
+          We currently service vacant units only. Please contact us once the unit is vacant.
+        </p>
+
+        <div class="formRow">
+          <div>
+            <label for="addons">Add-ons (optional)</label>
+            <select id="addons" name="addons">
+              <option value="" disabled selected>Add-ons (optional)</option>
+              <option>None</option>
+              <option>Oven Cleaning</option>
+              <option>Refrigerator Cleaning</option>
+              <option>Oven + Refrigerator</option>
+              <option>Same-Day Rush (if available)</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="email">Email (optional)</label>
+            <input id="email" name="email" type="email" placeholder="Email (optional)" />
+          </div>
+        </div>
+
+        <div>
+          <label for="notes">Notes (optional)</label>
+          <textarea id="notes" name="notes" placeholder="Anything we should know? (condition, access instructions, time window, etc.)"></textarea>
+        </div>
+
+        <button id="submitBtn" class="btn btnPrimary" type="submit">Submit Request</button>
+
+        <p class="finePrint">
+          By submitting this form you agree to be contacted by phone/text/email regarding your request.
+          For fastest service, text (817) 999-4960.
+        </p>
+      </form>
+    </section>
+
+    <div class="hr"></div>
+
+    <section id="faq" class="card faq">
+      <h2>FAQ</h2>
+
+      <details>
+        <summary>Do you clean occupied units?</summary>
+        <p>SwiftTurn specializes in <strong>vacant unit turnovers</strong>. If the unit is occupied, contact us once it’s vacant so we can provide flat-rate pricing and fast scheduling.</p>
+      </details>
+
+      <details>
+        <summary>How do you schedule and confirm completion?</summary>
+        <p>We confirm scheduling in writing, dispatch locally, and verify completion with <strong>before/after photos</strong>. This protects clients, contractors, and quality standards.</p>
+      </details>
+
+      <details>
+        <summary>How do I book?</summary>
+        <p>Call or text <strong>(817) 999-4960</strong> with the city, unit size, and preferred date. Payment is collected before dispatch to lock in the schedule.</p>
+      </details>
+
+      <details>
+        <summary>Do you offer recurring service for property managers?</summary>
+        <p>Yes. We support recurring turnover workflows for portfolios after an initial test turnover confirms fit and standards.</p>
+      </details>
+
+      <details>
+        <summary>Do you provide same-day service?</summary>
+        <p>When available. Same-day rush service may include an additional fee and depends on contractor availability in the correct zone.</p>
+      </details>
+    </section>
+
+    <footer>
+      <div><strong>SwiftTurn Property Services</strong> • (817) 999-4960</div>
+      <div>A DJEM Holdings, LLC Company</div>
+      <div style="margin-top:8px;">&copy; <span id="year"></span> SwiftTurn Property Services. All rights reserved.</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const vacantSelect = document.getElementById("vacant");
+    const submitBtn = document.getElementById("submitBtn");
+    const vacantNote = document.getElementById("vacantNote");
+
+    function updateVacantGate() {
+      const v = (vacantSelect?.value || "").toLowerCase();
+      if (!v) {
+        vacantNote.style.display = "none";
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = "1";
+        submitBtn.style.cursor = "pointer";
+        return;
+      }
+      const isVacant = v === "yes";
+      if (!isVacant) {
+        vacantNote.style.display = "block";
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = ".55";
+        submitBtn.style.cursor = "not-allowed";
+      } else {
+        vacantNote.style.display = "none";
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = "1";
+        submitBtn.style.cursor = "pointer";
+      }
+    }
+
+    vacantSelect?.addEventListener("change", updateVacantGate);
+    updateVacantGate();
+  </script>
+</body>
+</html>
