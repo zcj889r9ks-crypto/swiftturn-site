@@ -499,7 +499,7 @@
               <li>Anyone needing a clean, vacant unit on a schedule</li>
             </ul>
 
-            <div style="margin-top:14px; padding-top:14px; border-top:1px solid var(--line);">
+            <div style="margin-top:14px; padding-top:14px; border-top:14px solid transparent; border-top-color: transparent; border-top-width: 14px; border-top-style: solid; border-top:1px solid var(--line);">
               <div class="tiny">Direct line:</div>
               <a class="phone" href="tel:+18179994960">(817) 999-4960</a>
             </div>
@@ -613,11 +613,9 @@
           <form id="quoteForm"
                 method="POST"
                 action="https://formspree.io/f/xdadjajq">
-            <!-- TODO (REQUIRED): Replace XXXXX with your real Formspree form ID -->
 
             <!-- Formspree hidden fields -->
             <input type="hidden" name="_subject" value="SwiftTurn Quote Request (Vacant Unit Turnover)" />
-            <!-- TODO (REQUIRED): Replace <github-username> with your GitHub username -->
             <input type="hidden" name="_redirect" value="/thanks.html" />
 
             <!-- Optional honeypot -->
@@ -777,32 +775,78 @@
   </footer>
 
   <script>
-    // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.addEventListener('DOMContentLoaded', () => {
+      // Footer year
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    // Vacancy gate (required)
-    const vacantSelect = document.getElementById('vacant');
-    const submitBtn = document.getElementById('submitBtn');
-    const gateWarning = document.getElementById('gateWarning');
+      // Elements
+      const quoteForm = document.getElementById('quoteForm');
+      const vacantSelect = document.getElementById('vacant');
+      const submitBtn = document.getElementById('submitBtn');
+      const gateWarning = document.getElementById('gateWarning');
 
-    function applyVacancyGate() {
-      const val = vacantSelect.value;
-      const isVacant = (val === 'Yes');
-
-      // Disable submit unless explicitly Yes
-      submitBtn.disabled = !isVacant;
-
-      if (val === 'No') {
-        gateWarning.style.display = 'block';
-      } else {
-        gateWarning.style.display = 'none';
+      // Hard fail-safe: if key elements are missing, do not silently break.
+      if (!quoteForm || !vacantSelect || !submitBtn || !gateWarning) {
+        // If this happens, the page markup/IDs changed and JS can't bind safely.
+        // We intentionally do nothing else so the page remains usable.
+        return;
       }
-    }
 
-    // Start disabled until user selects "Yes"
-    submitBtn.disabled = true;
+      // Vacancy gate (required)
+      function applyVacancyGate() {
+        const val = vacantSelect.value;
+        const isVacant = (val === 'Yes');
 
-    vacantSelect.addEventListener('change', applyVacancyGate);
+        submitBtn.disabled = !isVacant;
+        gateWarning.style.display = (val === 'No') ? 'block' : 'none';
+      }
+
+      // Start disabled until user selects "Yes"
+      submitBtn.disabled = true;
+      vacantSelect.addEventListener('change', applyVacancyGate);
+
+      // Force reliable redirect AFTER Formspree accepts the submission
+      quoteForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // Hard safety: never submit unless vacant is "Yes"
+        if (vacantSelect.value !== 'Yes') {
+          applyVacancyGate();
+          return;
+        }
+
+        // UI state
+        const originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+
+        try {
+          const formData = new FormData(quoteForm);
+
+          const resp = await fetch(quoteForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (resp.ok) {
+            // Always send the user to YOUR thanks page
+            window.location.assign('/thanks.html');
+            return;
+          }
+
+          alert('Submission failed. Please try again or call/text (817) 999-4960.');
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        } catch (err) {
+          alert('Network error. Please try again or call/text (817) 999-4960.');
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        }
+      });
+    });
   </script>
+
 </body>
 </html>
